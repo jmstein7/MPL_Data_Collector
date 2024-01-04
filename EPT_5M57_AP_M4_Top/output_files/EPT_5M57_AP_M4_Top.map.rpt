@@ -1,0 +1,763 @@
+Analysis & Synthesis report for EPT_5M57_AP_M4_Top
+Sun Jan 16 15:30:18 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |EPT_5M57_AP_M4_Top|active_transfer:ACTIVE_TRANSFER_INST|transfer_busy_reg
+  9. State Machine - |EPT_5M57_AP_M4_Top|active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |EPT_5M57_AP_M4_Top
+ 17. Parameter Settings for User Entity Instance: active_control_register:ACTIVE_CONTROL_REG_INST
+ 18. Parameter Settings for User Entity Instance: active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST
+ 19. Parameter Settings for User Entity Instance: active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST
+ 20. Parameter Settings for User Entity Instance: active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST
+ 21. Parameter Settings for User Entity Instance: eptWireOR:wireOR
+ 22. Parameter Settings for User Entity Instance: active_trigger:ACTIVE_TRIGGER_INST
+ 23. Parameter Settings for User Entity Instance: active_transfer:ACTIVE_TRANSFER_INST
+ 24. Port Connectivity Checks: "active_transfer:ACTIVE_TRANSFER_INST"
+ 25. Port Connectivity Checks: "active_trigger:ACTIVE_TRIGGER_INST"
+ 26. Port Connectivity Checks: "active_control_register:ACTIVE_CONTROL_REG_INST"
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Jan 16 15:30:18 2022       ;
+; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name               ; EPT_5M57_AP_M4_Top                          ;
+; Top-level Entity Name       ; EPT_5M57_AP_M4_Top                          ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 351                                         ;
+; Total pins                  ; 63                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M570ZT100C5       ;                    ;
+; Top-level entity name                                            ; EPT_5M57_AP_M4_Top ; EPT_5M57_AP_M4_Top ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                 ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+; ../src/uart_transmitter.v        ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_transmitter.v        ;         ;
+; ../src/uart_top.v                ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_top.v                ;         ;
+; ../src/uart_receiver.v           ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_receiver.v           ;         ;
+; ../src/ft_245_state_machine.v    ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/ft_245_state_machine.v    ;         ;
+; ../src/eptWireOR.v               ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/eptWireOR.v               ;         ;
+; ../src/EPT_5M57_AP_M4_Top.v      ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v      ;         ;
+; ../src/endpoint_registers.v      ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v      ;         ;
+; ../src/define.v                  ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/define.v                  ;         ;
+; ../src/active_trigger.v          ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_trigger.v          ;         ;
+; ../src/active_transfer_uart.v    ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_transfer_uart.v    ;         ;
+; ../src/active_transfer.v         ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_transfer.v         ;         ;
+; ../src/active_serial_library.v   ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v   ;         ;
+; ../src/active_control_register.v ; yes             ; User Verilog HDL File  ; C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_control_register.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Total logic elements                        ; 351       ;
+;     -- Combinational with no register       ; 126       ;
+;     -- Register only                        ; 75        ;
+;     -- Combinational with a register        ; 150       ;
+;                                             ;           ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 118       ;
+;     -- 3 input functions                    ; 61        ;
+;     -- 2 input functions                    ; 90        ;
+;     -- 1 input functions                    ; 6         ;
+;     -- 0 input functions                    ; 1         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 295       ;
+;     -- arithmetic mode                      ; 56        ;
+;     -- qfbk mode                            ; 0         ;
+;     -- register cascade mode                ; 0         ;
+;     -- synchronous clear/load mode          ; 23        ;
+;     -- asynchronous clear/load mode         ; 217       ;
+;                                             ;           ;
+; Total registers                             ; 225       ;
+; Total logic cells in carry chains           ; 64        ;
+; I/O pins                                    ; 63        ;
+; Maximum fan-out node                        ; CLK_66MHZ ;
+; Maximum fan-out                             ; 225       ;
+; Total fan-out                               ; 1512      ;
+; Average fan-out                             ; 3.65      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                  ;
++--------------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                             ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                                             ; Entity Name           ; Library Name ;
++--------------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |EPT_5M57_AP_M4_Top                                    ; 351 (31)    ; 225          ; 0          ; 63   ; 0            ; 126 (5)      ; 75 (4)            ; 150 (22)         ; 64 (11)         ; 0 (0)      ; |EPT_5M57_AP_M4_Top                                                                                                                                             ; EPT_5M57_AP_M4_Top    ; work         ;
+;    |active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|  ; 314 (8)     ; 194          ; 0          ; 0    ; 0            ; 120 (8)      ; 69 (0)            ; 125 (0)          ; 53 (0)          ; 0 (0)      ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST                                                                                            ; active_serial_library ; work         ;
+;       |active_transfer_uart:ACTIVE_TRANSFER_UART_INST| ; 129 (51)    ; 99           ; 0          ; 0    ; 0            ; 30 (10)      ; 42 (25)           ; 57 (16)          ; 12 (8)          ; 0 (0)      ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST                                             ; active_transfer_uart  ; work         ;
+;          |uart_top:uart_inst|                          ; 78 (0)      ; 58           ; 0          ; 0    ; 0            ; 20 (0)       ; 17 (0)            ; 41 (0)           ; 4 (0)           ; 0 (0)      ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst                          ; uart_top              ; work         ;
+;             |uart_receiver:RX_INST|                    ; 40 (40)     ; 29           ; 0          ; 0    ; 0            ; 11 (11)      ; 9 (9)             ; 20 (20)          ; 4 (4)           ; 0 (0)      ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_receiver:RX_INST    ; uart_receiver         ; work         ;
+;             |uart_transmitter:TX_INST|                 ; 38 (38)     ; 29           ; 0          ; 0    ; 0            ; 9 (9)        ; 8 (8)             ; 21 (21)          ; 0 (0)           ; 0 (0)      ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_transmitter:TX_INST ; uart_transmitter      ; work         ;
+;       |endpoint_registers:ENDPOINT_REGISTERS_INST|     ; 129 (129)   ; 64           ; 0          ; 0    ; 0            ; 65 (65)      ; 19 (19)           ; 45 (45)          ; 33 (33)         ; 0 (0)      ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST                                                 ; endpoint_registers    ; work         ;
+;       |ft_245_state_machine:FT_245_STATE_MACHINE_INST| ; 48 (48)     ; 31           ; 0          ; 0    ; 0            ; 17 (17)      ; 8 (8)             ; 23 (23)          ; 8 (8)           ; 0 (0)      ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST                                             ; ft_245_state_machine  ; work         ;
+;    |active_transfer:ACTIVE_TRANSFER_INST|              ; 6 (6)       ; 5            ; 0          ; 0    ; 0            ; 1 (1)        ; 2 (2)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |EPT_5M57_AP_M4_Top|active_transfer:ACTIVE_TRANSFER_INST                                                                                                        ; active_transfer       ; work         ;
++--------------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |EPT_5M57_AP_M4_Top|active_transfer:ACTIVE_TRANSFER_INST|transfer_busy_reg ;
++----------------------+----------------------+----------------------+-----------------------+
+; Name                 ; transfer_busy_reg.00 ; transfer_busy_reg.10 ; transfer_busy_reg.01  ;
++----------------------+----------------------+----------------------+-----------------------+
+; transfer_busy_reg.00 ; 0                    ; 0                    ; 0                     ;
+; transfer_busy_reg.01 ; 1                    ; 0                    ; 1                     ;
+; transfer_busy_reg.10 ; 1                    ; 1                    ; 0                     ;
++----------------------+----------------------+----------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |EPT_5M57_AP_M4_Top|active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state                                                                                                                                                                            ;
++----------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------------------+
+; Name                                         ; transfer_control_state.TRANSFER_DECODE_BYTE ; transfer_control_state.TRANSFER_CONTROL_HDR2 ; transfer_control_state.TRANSFER_CONTROL_HDR1 ; transfer_control_state.TRANSFER_CONTROL_IDLE ; transfer_control_state.TRANSFER_CONTROL_SET ;
++----------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------------------+
+; transfer_control_state.TRANSFER_CONTROL_IDLE ; 0                                           ; 0                                            ; 0                                            ; 0                                            ; 0                                           ;
+; transfer_control_state.TRANSFER_CONTROL_HDR1 ; 0                                           ; 0                                            ; 1                                            ; 1                                            ; 0                                           ;
+; transfer_control_state.TRANSFER_CONTROL_HDR2 ; 0                                           ; 1                                            ; 0                                            ; 1                                            ; 0                                           ;
+; transfer_control_state.TRANSFER_DECODE_BYTE  ; 1                                           ; 0                                            ; 0                                            ; 1                                            ; 0                                           ;
+; transfer_control_state.TRANSFER_CONTROL_SET  ; 0                                           ; 0                                            ; 0                                            ; 1                                            ; 1                                           ;
++----------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                                                                                      ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------------------------------------------------------------------+---------------------+------------------------+
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_RD_N        ; GND                 ; yes                    ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|transfer_busy       ; GND                 ; yes                    ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|DATA_BYTE_READY ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 3                                                               ;                     ;                        ;
++-----------------------------------------------------------------------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                       ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                       ; Reason for Removal                                                                                                                                                 ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|command_from_device[2]                                  ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_from_device[0..7]                                ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|address_from_device[0,2]                                ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|CONTROL_REGISTER[0]                                                                                 ; Stuck at GND due to stuck port clock                                                                                                                               ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_in_received_reg                                                                            ; Stuck at GND due to stuck port clock                                                                                                                               ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_to_host_reg                                       ; Merged with active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_to_host                                              ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|address_from_device[1]                                  ; Merged with active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|command_from_device[1]                                     ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_en_reg                                            ; Merged with active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_EN                                                   ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_receiver:RX_INST|clk16x_reg ; Merged with active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_transmitter:TX_INST|clk16x_reg ;
+; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[0..7]                                                                                     ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_trigger:ACTIVE_TRIGGER_INST|trigger_to_host_flag                                                                                             ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate_counter[9,10]                                                                                      ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|command_from_device[0]                                  ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate_counter[8]                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; active_trigger:ACTIVE_TRIGGER_INST|xint[8..10]                                                                                                      ; Stuck at GND due to stuck port clock_enable                                                                                                                        ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state~4                                                                            ; Lost fanout                                                                                                                                                        ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state~5                                                                            ; Lost fanout                                                                                                                                                        ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state.TRANSFER_CONTROL_SET                                                         ; Stuck at GND due to stuck port clock                                                                                                                               ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state~7                                                                            ; Lost fanout                                                                                                                                                        ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state.TRANSFER_CONTROL_IDLE                                                        ; Stuck at GND due to stuck port clock                                                                                                                               ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state.TRANSFER_CONTROL_HDR1                                                        ; Stuck at GND due to stuck port clock                                                                                                                               ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state.TRANSFER_CONTROL_HDR2                                                        ; Stuck at GND due to stuck port clock                                                                                                                               ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state.TRANSFER_DECODE_BYTE                                                         ; Stuck at GND due to stuck port clock                                                                                                                               ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[7]                                                                                          ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[7]                                        ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[6]                                                                                          ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[6]                                        ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[5]                                                                                          ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[5]                                        ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[4]                                                                                          ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[4]                                        ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[3]                                                                                          ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[3]                                        ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[2]                                                                                          ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[2]                                        ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[1]                                                                                          ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[1]                                        ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[0]                                                                                          ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[0]                                        ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_received                                                                                              ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_busy                                                                                                  ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|state_in[0,2]                                                                                                  ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in                                             ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|state_in[3]                                                                                                    ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_address[0..2]                                     ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|state_in[1]                                                                                                    ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_command[0..2]                                     ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_reg                                         ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[1..3]                               ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[0..2]                               ; Lost fanout                                                                                                                                                        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[0]                                  ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_busy_reg.01                                                                                           ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_busy_reg.10                                                                                           ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_busy_reg.00                                                                                           ; Lost fanout                                                                                                                                                        ;
+; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[2,3]                                                                                      ; Stuck at GND due to stuck port data_in                                                                                                                             ;
+; Total Number of Removed Registers = 84                                                                                                              ;                                                                                                                                                                    ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                    ;
++--------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                ; Reason for Removal        ; Registers Removed due to This Register                                                                              ;
++--------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------+
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_control_state~4                                     ; Lost Fanouts              ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[7],                                                         ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[7],       ;
+;                                                                                                              ;                           ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[6],                                                         ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[6],       ;
+;                                                                                                              ;                           ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[5],                                                         ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[5],       ;
+;                                                                                                              ;                           ; active_transfer:ACTIVE_TRANSFER_INST|state_in[2],                                                                   ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in,            ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_command[0],       ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_command[2],       ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_reg,        ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[3], ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[2], ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[1], ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[0]  ;
+; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[7]                                                 ; Stuck at GND              ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate,                                                                   ;
+;                                                                                                              ; due to stuck port data_in ; active_trigger:ACTIVE_TRIGGER_INST|trigger_to_host_flag,                                                            ;
+;                                                                                                              ;                           ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate_counter[10],                                                       ;
+;                                                                                                              ;                           ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate_counter[9],                                                        ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|command_from_device[0], ;
+;                                                                                                              ;                           ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate_counter[8],                                                        ;
+;                                                                                                              ;                           ; active_trigger:ACTIVE_TRIGGER_INST|xint[10],                                                                        ;
+;                                                                                                              ;                           ; active_trigger:ACTIVE_TRIGGER_INST|xint[9],                                                                         ;
+;                                                                                                              ;                           ; active_trigger:ACTIVE_TRIGGER_INST|xint[8]                                                                          ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|transfer_in_received_reg                                     ; Stuck at GND              ; active_transfer:ACTIVE_TRANSFER_INST|transfer_received,                                                             ;
+;                                                                                                              ; due to stuck port clock   ; active_transfer:ACTIVE_TRANSFER_INST|state_in[0],                                                                   ;
+;                                                                                                              ;                           ; active_transfer:ACTIVE_TRANSFER_INST|state_in[3],                                                                   ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_address[0],       ;
+;                                                                                                              ;                           ; active_transfer:ACTIVE_TRANSFER_INST|state_in[1],                                                                   ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_command[1],       ;
+;                                                                                                              ;                           ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[0]  ;
+; active_control_register:ACTIVE_CONTROL_REG_INST|CONTROL_REGISTER[0]                                          ; Stuck at GND              ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[0],                                                         ;
+;                                                                                                              ; due to stuck port clock   ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[0]        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_busy                                                           ; Lost Fanouts              ; active_transfer:ACTIVE_TRANSFER_INST|transfer_busy_reg.01,                                                          ;
+;                                                                                                              ;                           ; active_transfer:ACTIVE_TRANSFER_INST|transfer_busy_reg.10                                                           ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[4]                                                   ; Lost Fanouts              ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[4]        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[3]                                                   ; Lost Fanouts              ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[3]        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[2]                                                   ; Lost Fanouts              ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[2]        ;
+; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[1]                                                   ; Lost Fanouts              ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[1]        ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_address[2] ; Lost Fanouts              ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[2]  ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_address[1] ; Lost Fanouts              ; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[1]  ;
++--------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 225   ;
+; Number of registers using Synchronous Clear  ; 23    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 217   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 127   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                       ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                        ; Fan out ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_transmitter:TX_INST|SDO          ; 1       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|write_tx_byte                                            ; 15      ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_transmitter:TX_INST|BUFFER_EMPTY ; 4       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|USB_RXF_N                                                ; 5       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_WR                                                   ; 4       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|USB_TXE_N                                                ; 6       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[0]                                                     ; 8       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|state_receive[0]                                         ; 3       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[0]                                                 ; 8       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|usb_rxf_n_reg                                            ; 4       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|usb_wr_reg                                               ; 2       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|state_transmit[0]                                        ; 2       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_data_byte                                              ; 3       ;
+; active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|rx_byte_read                                             ; 1       ;
+; Total number of inverted registers = 14                                                                                                                  ;         ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[3]                                                                                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_receiver:RX_INST|clk16_count[0]  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|data_byte_ready_delay_cnt[0]                                 ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_control_mux[4]                                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_transmitter:TX_INST|bit_count[1] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_command[0]                                             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[3]                                                ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|read_complete_cntr[6]                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |EPT_5M57_AP_M4_Top|transfer_write_byte[5]                                                                                                                                   ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_transmitter:TX_INST|shift_reg[3] ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_payload[5]                                             ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_receiver:RX_INST|shift_reg[5]    ;
+; 513:1              ; 6 bits    ; 2052 LEs      ; 12 LEs               ; 2040 LEs               ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[5]                                                ;
+; 259:1              ; 2 bits    ; 344 LEs       ; 4 LEs                ; 340 LEs                ; Yes        ; |EPT_5M57_AP_M4_Top|active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[1]                                                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |EPT_5M57_AP_M4_Top|active_transfer:ACTIVE_TRANSFER_INST|transfer_busy_reg                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |EPT_5M57_AP_M4_Top ;
++--------------------+-------+-------------------------------------------------------+
+; Parameter Name     ; Value ; Type                                                  ;
++--------------------+-------+-------------------------------------------------------+
+; GLOBAL_RESET_COUNT ; 1111  ; Unsigned Binary                                       ;
++--------------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: active_control_register:ACTIVE_CONTROL_REG_INST ;
++------------------------+----------+----------------------------------------------------------+
+; Parameter Name         ; Value    ; Type                                                     ;
++------------------------+----------+----------------------------------------------------------+
+; TRANSFER_CONTROL_BYTE1 ; 01011010 ; Unsigned Binary                                          ;
+; TRANSFER_CONTROL_BYTE2 ; 11000011 ; Unsigned Binary                                          ;
+; TRANSFER_CONTROL_BYTE3 ; 01111110 ; Unsigned Binary                                          ;
+; TRANSFER_CONTROL_IDLE  ; 0        ; Signed Integer                                           ;
+; TRANSFER_CONTROL_HDR1  ; 1        ; Signed Integer                                           ;
+; TRANSFER_CONTROL_HDR2  ; 2        ; Signed Integer                                           ;
+; TRANSFER_DECODE_BYTE   ; 3        ; Signed Integer                                           ;
+; TRANSFER_CONTROL_SET   ; 4        ; Signed Integer                                           ;
++------------------------+----------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST ;
++-----------------------+----------+-----------------------------------------------------------------------------------------------------------+
+; Parameter Name        ; Value    ; Type                                                                                                      ;
++-----------------------+----------+-----------------------------------------------------------------------------------------------------------+
+; IDLE                  ; 0        ; Signed Integer                                                                                            ;
+; RECEIVE_DATA          ; 1        ; Signed Integer                                                                                            ;
+; STORE_BYTE            ; 2        ; Signed Integer                                                                                            ;
+; SEND_TO_HOST          ; 3        ; Signed Integer                                                                                            ;
+; RECEIVE_COMPLETE      ; 4        ; Signed Integer                                                                                            ;
+; IDLE_TR               ; 0        ; Signed Integer                                                                                            ;
+; WRITE_REGISTER        ; 1        ; Signed Integer                                                                                            ;
+; LOAD_SHIFT_REG        ; 2        ; Signed Integer                                                                                            ;
+; DELAY_WRITE_DATA_BYTE ; 3        ; Signed Integer                                                                                            ;
+; WRITE_DATA_BYTE       ; 4        ; Signed Integer                                                                                            ;
+; WRITE_DATA_COMPLETE   ; 5        ; Signed Integer                                                                                            ;
+; COUNT_TO_DECIMAL_2    ; 00100011 ; Unsigned Binary                                                                                           ;
++-----------------------+----------+-----------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST ;
++-------------------------+-------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value ; Type                                                                                                       ;
++-------------------------+-------+------------------------------------------------------------------------------------------------------------+
+; IDLE                    ; 0     ; Signed Integer                                                                                             ;
+; ASSERT_RD_N             ; 1     ; Signed Integer                                                                                             ;
+; WAIT_FOR_RD_COMPLETION  ; 2     ; Signed Integer                                                                                             ;
+; WAIT_FOR_DE_ASSERT_RD_N ; 3     ; Signed Integer                                                                                             ;
+; DE_ASSERT_RD_N          ; 4     ; Signed Integer                                                                                             ;
+; CHECK_TXE               ; 5     ; Signed Integer                                                                                             ;
+; ASSERT_WR               ; 6     ; Signed Integer                                                                                             ;
+; WAIT_FOR_WR_COMPLETION  ; 7     ; Signed Integer                                                                                             ;
+; DE_ASSERT_WR            ; 8     ; Signed Integer                                                                                             ;
++-------------------------+-------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST ;
++--------------------------+-------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name           ; Value ; Type                                                                                                  ;
++--------------------------+-------+-------------------------------------------------------------------------------------------------------+
+; IDLE                     ; 0     ; Signed Integer                                                                                        ;
+; DECODE_BYTE              ; 1     ; Signed Integer                                                                                        ;
+; READ_CONTROL_BYTE        ; 2     ; Signed Integer                                                                                        ;
+; READ_DATA_BYTE           ; 3     ; Signed Integer                                                                                        ;
+; WAIT_FIFO_READY          ; 4     ; Signed Integer                                                                                        ;
+; WRITE_CONTROL_BYTE       ; 6     ; Signed Integer                                                                                        ;
+; WRITE_CONTROL_BYTE_DELAY ; 7     ; Signed Integer                                                                                        ;
+; WRITE_CONTROL_COMPLETE   ; 8     ; Signed Integer                                                                                        ;
++--------------------------+-------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: eptWireOR:wireOR ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; N              ; 2     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: active_trigger:ACTIVE_TRIGGER_INST ;
++---------------------+-------+---------------------------------------------------+
+; Parameter Name      ; Value ; Type                                              ;
++---------------------+-------+---------------------------------------------------+
+; TO_TRIGUPDATE_COUNT ; 011   ; Unsigned Binary                                   ;
++---------------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: active_transfer:ACTIVE_TRANSFER_INST ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; IN_IDLE        ; 0     ; Signed Integer                                           ;
+; IN_READ_CMD    ; 1     ; Signed Integer                                           ;
+; IN_READ_BYTE   ; 2     ; Signed Integer                                           ;
+; IN_DELAY       ; 3     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "active_transfer:ACTIVE_TRANSFER_INST"                                                                             ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; uc_addr[2]    ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; uc_addr[1]    ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; uc_addr[0]    ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; transfer_busy ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "active_trigger:ACTIVE_TRIGGER_INST"                                                              ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; trigger_to_device ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "active_control_register:ACTIVE_CONTROL_REG_INST"                                                      ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                   ; Type   ; Severity ; Details                                                                             ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; CONTROL_REGISTER[7..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sun Jan 16 15:30:11 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EPT_5M57_AP_M4_Top -c EPT_5M57_AP_M4_Top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/write_control_logic.v
+    Info (12023): Found entity 1: write_control_logic File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/write_control_logic.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/uart_transmitter.v
+    Info (12023): Found entity 1: uart_transmitter File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_transmitter.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/uart_top.v
+    Info (12023): Found entity 1: uart_top File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_top.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/uart_receiver.v
+    Info (12023): Found entity 1: uart_receiver File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_receiver.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/sync_fifo.v
+    Info (12023): Found entity 1: sync_fifo File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/sync_fifo.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/serial_clock.v
+    Info (12023): Found entity 1: serial_clock File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/serial_clock.v Line: 30
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/read_control_logic.v
+    Info (12023): Found entity 1: read_control_logic File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/read_control_logic.v Line: 14
+Warning (12090): Entity "mux" obtained from "../src/mux.v" instead of from Quartus Prime megafunction library File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/mux.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/mux.v
+    Info (12023): Found entity 1: mux File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/mux.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/mem_array.v
+    Info (12023): Found entity 1: mem_array File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/mem_array.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/ft_245_state_machine.v
+    Info (12023): Found entity 1: ft_245_state_machine File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/ft_245_state_machine.v Line: 41
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/flipflop.v
+    Info (12023): Found entity 1: flipflop File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/flipflop.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/eptwireor.v
+    Info (12023): Found entity 1: eptWireOR File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/eptWireOR.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/ept_5m57_ap_m4_top.v
+    Info (12023): Found entity 1: EPT_5M57_AP_M4_Top File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/endpoint_registers.v
+    Info (12023): Found entity 1: endpoint_registers File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 38
+Info (12021): Found 0 design units, including 0 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/define.v
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/active_trigger.v
+    Info (12023): Found entity 1: active_trigger File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_trigger.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/active_transfer_uart.v
+    Info (12023): Found entity 1: active_transfer_uart File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_transfer_uart.v Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/active_transfer.v
+    Info (12023): Found entity 1: active_transfer File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_transfer.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/active_serial_library.v
+    Info (12023): Found entity 1: active_serial_library File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/active_control_register.v
+    Info (12023): Found entity 1: active_control_register File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_control_register.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/code_fpga/ept_5m57_ap_m4_data_collector/ept_5m57_ap_m4_data_collector/src/active_block.v
+    Info (12023): Found entity 1: active_block File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_block.v Line: 19
+Info (12127): Elaborating entity "EPT_5M57_AP_M4_Top" for the top level hierarchy
+Warning (10858): Verilog HDL warning at EPT_5M57_AP_M4_Top.v(124): object transfer_out_reg used but never assigned File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 124
+Warning (10030): Net "transfer_out_reg" at EPT_5M57_AP_M4_Top.v(124) has no driver or initial value, using a default initial value '0' File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 124
+Info (12128): Elaborating entity "active_control_register" for hierarchy "active_control_register:ACTIVE_CONTROL_REG_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 284
+Info (12128): Elaborating entity "active_serial_library" for hierarchy "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 303
+Info (12128): Elaborating entity "active_transfer_uart" for hierarchy "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 138
+Warning (10858): Verilog HDL warning at active_transfer_uart.v(96): object store_reg_state used but never assigned File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_transfer_uart.v Line: 96
+Warning (10858): Verilog HDL warning at active_transfer_uart.v(101): object usb_rxf_reg used but never assigned File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_transfer_uart.v Line: 101
+Warning (10230): Verilog HDL assignment warning at active_transfer_uart.v(511): truncated value with size 32 to match size of target (8) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_transfer_uart.v Line: 511
+Info (12128): Elaborating entity "uart_top" for hierarchy "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_transfer_uart.v Line: 532
+Info (12128): Elaborating entity "uart_receiver" for hierarchy "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_receiver:RX_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_top.v Line: 67
+Warning (10036): Verilog HDL or VHDL warning at uart_receiver.v(43): object "start_bit" assigned a value but never read File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_receiver.v Line: 43
+Warning (10230): Verilog HDL assignment warning at uart_receiver.v(118): truncated value with size 32 to match size of target (4) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_receiver.v Line: 118
+Warning (10230): Verilog HDL assignment warning at uart_receiver.v(201): truncated value with size 32 to match size of target (4) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_receiver.v Line: 201
+Info (12128): Elaborating entity "uart_transmitter" for hierarchy "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|active_transfer_uart:ACTIVE_TRANSFER_UART_INST|uart_top:uart_inst|uart_transmitter:TX_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_top.v Line: 78
+Warning (10230): Verilog HDL assignment warning at uart_transmitter.v(171): truncated value with size 32 to match size of target (4) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_transmitter.v Line: 171
+Warning (10230): Verilog HDL assignment warning at uart_transmitter.v(196): truncated value with size 32 to match size of target (4) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_transmitter.v Line: 196
+Info (12128): Elaborating entity "ft_245_state_machine" for hierarchy "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 173
+Warning (10858): Verilog HDL warning at ft_245_state_machine.v(98): object usb_rxf_reg used but never assigned File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/ft_245_state_machine.v Line: 98
+Warning (10240): Verilog HDL Always Construct warning at ft_245_state_machine.v(346): inferring latch(es) for variable "USB_RD_N", which holds its previous value in one or more paths through the always construct File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/ft_245_state_machine.v Line: 346
+Warning (10235): Verilog HDL Always Construct warning at ft_245_state_machine.v(429): variable "USB_WR" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/ft_245_state_machine.v Line: 429
+Info (10041): Inferred latch for "USB_RD_N" at ft_245_state_machine.v(346) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/ft_245_state_machine.v Line: 346
+Info (10041): Inferred latch for "DATA_BYTE_READY" at ft_245_state_machine.v(120) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/ft_245_state_machine.v Line: 120
+Info (12128): Elaborating entity "endpoint_registers" for hierarchy "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 198
+Warning (10230): Verilog HDL assignment warning at endpoint_registers.v(159): truncated value with size 32 to match size of target (8) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 159
+Warning (10230): Verilog HDL assignment warning at endpoint_registers.v(160): truncated value with size 32 to match size of target (3) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 160
+Warning (10230): Verilog HDL assignment warning at endpoint_registers.v(161): truncated value with size 32 to match size of target (3) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 161
+Warning (10230): Verilog HDL assignment warning at endpoint_registers.v(162): truncated value with size 32 to match size of target (8) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 162
+Warning (10240): Verilog HDL Always Construct warning at endpoint_registers.v(316): inferring latch(es) for variable "transfer_busy", which holds its previous value in one or more paths through the always construct File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 316
+Info (10264): Verilog HDL Case Statement information at endpoint_registers.v(488): all case item expressions in this case statement are onehot File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 488
+Warning (10230): Verilog HDL assignment warning at endpoint_registers.v(586): truncated value with size 32 to match size of target (3) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 586
+Info (10264): Verilog HDL Case Statement information at endpoint_registers.v(651): all case item expressions in this case statement are onehot File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 651
+Warning (10235): Verilog HDL Always Construct warning at endpoint_registers.v(673): variable "length_to_device" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 673
+Warning (10235): Verilog HDL Always Construct warning at endpoint_registers.v(711): variable "command_from_device" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 711
+Info (10041): Inferred latch for "transfer_busy" at endpoint_registers.v(320) File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/endpoint_registers.v Line: 320
+Info (12128): Elaborating entity "eptWireOR" for hierarchy "eptWireOR:wireOR" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 308
+Info (12128): Elaborating entity "active_trigger" for hierarchy "active_trigger:ACTIVE_TRIGGER_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 319
+Info (12128): Elaborating entity "active_transfer" for hierarchy "active_transfer:ACTIVE_TRANSFER_INST" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 335
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|bd_inout[0]" to the node "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[0]" into an OR gate File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 75
+    Warning (13047): Converted the fan-out from the tri-state buffer "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|bd_inout[1]" to the node "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[1]" into an OR gate File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 75
+    Warning (13047): Converted the fan-out from the tri-state buffer "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|bd_inout[2]" to the node "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[2]" into an OR gate File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 75
+    Warning (13047): Converted the fan-out from the tri-state buffer "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|bd_inout[3]" to the node "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[3]" into an OR gate File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 75
+    Warning (13047): Converted the fan-out from the tri-state buffer "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|bd_inout[4]" to the node "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[4]" into an OR gate File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 75
+    Warning (13047): Converted the fan-out from the tri-state buffer "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|bd_inout[5]" to the node "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[5]" into an OR gate File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 75
+    Warning (13047): Converted the fan-out from the tri-state buffer "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|bd_inout[6]" to the node "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[6]" into an OR gate File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 75
+    Warning (13047): Converted the fan-out from the tri-state buffer "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|bd_inout[7]" to the node "active_serial_library:ACTIVE_SERIAL_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[7]" into an OR gate File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/active_serial_library.v Line: 75
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LB_COMM[0]" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 55
+    Warning (13410): Pin "LB_COMM[1]" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 55
+    Warning (13410): Pin "LB_COMM[2]" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 55
+    Warning (13410): Pin "LB_COMM[3]" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 55
+    Warning (13410): Pin "LB_COMM[4]" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 55
+    Warning (13410): Pin "LB_COMM[5]" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 55
+    Warning (13410): Pin "LB_COMM[6]" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 55
+    Warning (13410): Pin "LB_COMM[7]" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 55
+    Warning (13410): Pin "TR_DIR_1" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 61
+    Warning (13410): Pin "TR_OE_1" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 62
+    Warning (13410): Pin "TR_DIR_2" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 64
+    Warning (13410): Pin "TR_OE_2" is stuck at VCC File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 65
+    Warning (13410): Pin "TR_DIR_3" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 67
+    Warning (13410): Pin "TR_OE_3" is stuck at VCC File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 68
+    Warning (13410): Pin "TR_DIR_4" is stuck at VCC File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 70
+    Warning (13410): Pin "TR_OE_4" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 71
+    Warning (13410): Pin "TR_DIR_5" is stuck at VCC File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 73
+    Warning (13410): Pin "TR_OE_5" is stuck at GND File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 74
+Info (18000): Registers with preset signals will power-up high File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/uart_transmitter.v Line: 38
+Info (17049): 43 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 28 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "LB_IOHA[1]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 52
+    Warning (15610): No output dependent on input pin "LB_IOHA[2]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 52
+    Warning (15610): No output dependent on input pin "LB_IOHA[3]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 52
+    Warning (15610): No output dependent on input pin "LB_IOHA[4]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 52
+    Warning (15610): No output dependent on input pin "LB_IOHA[5]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 52
+    Warning (15610): No output dependent on input pin "LB_IOHA[6]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 52
+    Warning (15610): No output dependent on input pin "LB_IOHA[7]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 52
+    Warning (15610): No output dependent on input pin "LB_IOHB[0]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 53
+    Warning (15610): No output dependent on input pin "LB_IOHB[1]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 53
+    Warning (15610): No output dependent on input pin "LB_IOHB[2]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 53
+    Warning (15610): No output dependent on input pin "LB_IO8[0]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 56
+    Warning (15610): No output dependent on input pin "LB_IO8[1]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 56
+    Warning (15610): No output dependent on input pin "LB_IO8[2]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 56
+    Warning (15610): No output dependent on input pin "LB_IO8[3]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 56
+    Warning (15610): No output dependent on input pin "LB_IO8[4]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 56
+    Warning (15610): No output dependent on input pin "LB_IO8[5]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 56
+    Warning (15610): No output dependent on input pin "LB_IO8[6]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 56
+    Warning (15610): No output dependent on input pin "LB_IO8[7]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 56
+    Warning (15610): No output dependent on input pin "LB_IO9[0]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 57
+    Warning (15610): No output dependent on input pin "LB_IO9[1]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 57
+    Warning (15610): No output dependent on input pin "LB_IO9[2]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 57
+    Warning (15610): No output dependent on input pin "LB_IO9[3]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 57
+    Warning (15610): No output dependent on input pin "LB_IO9[4]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 57
+    Warning (15610): No output dependent on input pin "LB_IO9[5]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 57
+    Warning (15610): No output dependent on input pin "LB_IO9[6]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 57
+    Warning (15610): No output dependent on input pin "LB_IO9[7]" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 57
+    Warning (15610): No output dependent on input pin "SW_USER_1" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 76
+    Warning (15610): No output dependent on input pin "SW_USER_2" File: C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/src/EPT_5M57_AP_M4_Top.v Line: 77
+Info (21057): Implemented 414 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 40 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 351 logic cells
+Info (144001): Generated suppressed messages file C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Top/output_files/EPT_5M57_AP_M4_Top.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 81 warnings
+    Info: Peak virtual memory: 4703 megabytes
+    Info: Processing ended: Sun Jan 16 15:30:18 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:15
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Data_Collector/EPT_5M57_AP_M4_Top/output_files/EPT_5M57_AP_M4_Top.map.smsg.
+
+

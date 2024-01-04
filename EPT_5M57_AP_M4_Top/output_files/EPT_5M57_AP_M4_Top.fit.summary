@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Jan 16 15:30:20 2022
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : EPT_5M57_AP_M4_Top
+Top-level Entity Name : EPT_5M57_AP_M4_Top
+Family : MAX V
+Device : 5M570ZT100C5
+Timing Models : Final
+Total logic elements : 333 / 570 ( 58 % )
+Total pins : 63 / 74 ( 85 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

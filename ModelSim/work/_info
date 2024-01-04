@@ -1,0 +1,489 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/ModelSim
+vactive_block
+Z1 !s110 1509047351
+!i10b 1
+!s100 H6h_Ad`4VLzEnG8;z3eF13
+IER1ANEL1>G0YoIOTjdif^0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1509047305
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_block.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_block.v
+L0 19
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1509047351.000000
+!s107 ../src/define.v|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_block.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_block.v|
+!i113 1
+Z5 o-work work
+Z6 !s92 +define+SIM -work work
+vactive_control_register
+Z7 !s110 1509047349
+!i10b 1
+!s100 F?LQMVYQzmRJFDE09j9R@2
+IV1M1NI_STieX?=kP]W5bL0
+R2
+R0
+w1377329690
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_control_register.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_control_register.v
+Z8 L0 12
+R3
+r1
+!s85 0
+31
+Z9 !s108 1509047349.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_control_register.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_control_register.v|
+!i113 1
+R5
+R6
+vactive_transfer
+Z10 !s110 1509047350
+!i10b 1
+!s100 8;Q3GE[Hh8eAbb>gUYjhz0
+I6AzMYN6n<VI`aShl=o2J]3
+R2
+R0
+w1425068440
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_transfer.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_transfer.v
+Z11 L0 13
+R3
+r1
+!s85 0
+31
+Z12 !s108 1509047350.000000
+!s107 ../src/define.v|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_transfer.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_transfer.v|
+!i113 1
+R5
+R6
+vactive_transfer_library
+R7
+!i10b 1
+!s100 U6C]b4?9zRekX?S0^[W]F0
+IIN6Fl1h[DM:j77835ai9f3
+R2
+R0
+w1434135112
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_transfer_library.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_transfer_library.v
+Z13 L0 38
+R3
+r1
+!s85 0
+31
+R9
+!s107 ../src/define.v|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_transfer_library.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_transfer_library.v|
+!i113 1
+R5
+R6
+vactive_trigger
+R10
+!i10b 1
+!s100 IJ9`zVWI<K]GW30Y4RilH3
+IS5@^DJ`_?hVR:?iz8JP?M2
+R2
+R0
+w1508955886
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_trigger.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_trigger.v
+R11
+R3
+r1
+!s85 0
+31
+R12
+!s107 ../src/define.v|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_trigger.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/active_trigger.v|
+!i113 1
+R5
+R6
+vendpoint_registers
+!s110 1509047352
+!i10b 1
+!s100 _6?R8<b5zf;kA?M<8Z=4L0
+Id[<GZidReBcQz>Blk_C850
+R2
+R0
+w1460069660
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/endpoint_registers.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/endpoint_registers.v
+R13
+R3
+r1
+!s85 0
+31
+R4
+!s107 ../src/define.v|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/endpoint_registers.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/endpoint_registers.v|
+!i113 1
+R5
+R6
+vEPT_5M57_AP_M4_Top
+R7
+!i10b 1
+!s100 FJeAQWn1^_5ShgLgSU2]>2
+ISUDnQEl]9Z8[6oT]b]UlW0
+R2
+R0
+w1509042573
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/src/EPT_5M57_AP_M4_Top.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/src/EPT_5M57_AP_M4_Top.v
+R13
+R3
+r1
+!s85 0
+31
+!s108 1509047348.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/src/EPT_5M57_AP_M4_Top.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/src/EPT_5M57_AP_M4_Top.v|
+!i113 1
+R5
+R6
+n@e@p@t_5@m57_@a@p_@m4_@top
+veptWireOR
+R10
+!i10b 1
+!s100 Woa_3I4_KD8aUlPM:MgLP3
+Iib2eE4[T[^?jfhb^<dFYn3
+R2
+R0
+w1341557582
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/eptWireOR.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/eptWireOR.v
+Z14 L0 32
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/eptWireOR.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/eptWireOR.v|
+!i113 1
+R5
+R6
+nept@wire@o@r
+vfifo_4x16_model
+!s110 1508066923
+!i10b 1
+!s100 @645HB0]fN=LmKbzNW>Q]2
+Il[WzRej4jXEH;^NzMkF@03
+R2
+R0
+w1230312416
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/fifo_4x16_model.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/fifo_4x16_model.v
+R13
+R3
+r1
+!s85 0
+31
+!s108 1508066923.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/fifo_4x16_model.v|
+!s90 -reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/fifo_4x16_model.v|
+!i113 1
+R5
+vft_245_state_machine
+R1
+!i10b 1
+!s100 JBVDdEFndmMWC^S]Y>P3o2
+IJ0;hPAPAjMlGjz[NlD8[:0
+R2
+R0
+w1460045792
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/ft_245_state_machine.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/ft_245_state_machine.v
+L0 41
+R3
+r1
+!s85 0
+31
+R4
+!s107 ../src/define.v|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/ft_245_state_machine.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/sim/ft_245_state_machine.v|
+!i113 1
+R5
+R6
+vhost_ft245_model
+!s110 1509047353
+!i10b 1
+!s100 <5DR?488>KUSW>R4GH?Fz1
+IcAHb62VQiMZYN2Gd;g7SR2
+R2
+R0
+w1341988171
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model.v
+Z15 L0 14
+R3
+r1
+!s85 0
+31
+!s108 1509047353.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model.v|
+!i113 1
+R5
+R6
+vhost_ft245_model_read
+Z16 !s110 1509047354
+!i10b 1
+!s100 XH6RX`ETLR8^d3CSZIdEh2
+I4^gzI3QLfnLnJ@@Z77Z2`1
+R2
+R0
+w1340088421
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model_read.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model_read.v
+Z17 L0 18
+R3
+r1
+!s85 0
+31
+Z18 !s108 1509047354.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model_read.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model_read.v|
+!i113 1
+R5
+R6
+vhost_ft245_model_write
+R16
+!i10b 1
+!s100 [J:YCI[VEV_DTj2=Z4MzL0
+I4@mS6EE`AIK3QlWGaPinQ2
+R2
+R0
+w1341987915
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model_write.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model_write.v
+R17
+R3
+r1
+!s85 0
+31
+R18
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model_write.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/host_ft245_model_write.v|
+!i113 1
+R5
+R6
+vi2c_ack_model
+!s110 1508066925
+!i10b 1
+!s100 o]ihBRkn3>75V>5KYM_:23
+I<lgJJ0_odU1zQ0fD`AeW`0
+R2
+R0
+w1420363496
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/i2c_ack_model.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/i2c_ack_model.v
+L0 31
+R3
+r1
+!s85 0
+31
+!s108 1508066925.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/i2c_ack_model.v|
+!s90 -reportprogress|30|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/i2c_ack_model.v|
+!i113 1
+R5
+viic_receive_model
+Z19 !s110 1508066927
+!i10b 1
+!s100 WRiF^zKY7@z3G^KMY?^O@0
+IDHPHQ3L8je5lkSQ<8;MAQ2
+R2
+R0
+w1419305767
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/iic_receive_model.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/iic_receive_model.v
+L0 56
+R3
+r1
+!s85 0
+31
+!s108 1508066926.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/iic_receive_model.v|
+!s90 -reportprogress|30|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/iic_receive_model.v|
+!i113 1
+R5
+viic_transmit_model
+R19
+!i10b 1
+!s100 gZ38d2U8F_N7Zf]kf@AO40
+ITb[?:JNDcEiSHF0mU@W9l0
+R2
+R0
+w1419107960
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/iic_transmit_model.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/iic_transmit_model.v
+L0 36
+R3
+r1
+!s85 0
+31
+!s108 1508066927.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/iic_transmit_model.v|
+!s90 -reportprogress|30|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/iic_transmit_model.v|
+!i113 1
+R5
+vmem_array
+Z20 !s110 1509047355
+!i10b 1
+!s100 4?Se6HKR6S7Nb;C>Z@k>I2
+I6Ee[84=4Hle3Bmag1elN>3
+R2
+R0
+w1328655912
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/mem_array.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/mem_array.v
+R15
+R3
+r1
+!s85 0
+31
+R18
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/mem_array.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/mem_array.v|
+!i113 1
+R5
+R6
+vread_control_logic
+R20
+!i10b 1
+!s100 DY9joMQ>IBE[BN1EGF3_n0
+IKPSioo@D=RRE]ndbU_Hn93
+R2
+R0
+w1331918129
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/read_control_logic.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/read_control_logic.v
+R15
+R3
+r1
+!s85 0
+31
+Z21 !s108 1509047355.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/read_control_logic.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/read_control_logic.v|
+!i113 1
+R5
+R6
+vsensor_feedback_model
+!s110 1508066928
+!i10b 1
+!s100 1lnlgJOz[n7:oMYTY@9kM2
+ITUXk^IN`Td:N57fQ8WFmH1
+R2
+R0
+w1420063689
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/sensor_feedback_model.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/sensor_feedback_model.v
+L0 45
+R3
+r1
+!s85 0
+31
+!s108 1508066928.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/sensor_feedback_model.v|
+!s90 -reportprogress|30|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/sensor_feedback_model.v|
+!i113 1
+R5
+vserial_iic_comms_model
+!s110 1508066929
+!i10b 1
+!s100 DJQ0hWd2J;YzmE80[ni2a3
+INJg<MLGa;RWNa5AblTb5j0
+R2
+R0
+w1420422165
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/serial_iic_comms_model.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/serial_iic_comms_model.v
+L0 28
+R3
+r1
+!s85 0
+31
+!s108 1508066929.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/serial_iic_comms_model.v|
+!s90 -reportprogress|30|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/serial_iic_comms_model.v|
+!i113 1
+R5
+vsync_fifo
+Z22 !s110 1509047356
+!i10b 1
+!s100 Q7C_UD^9?Vnbj1lb=8bb32
+I8NRIn:VDI^2YoVz@>Q9=@3
+R2
+R0
+w1331919791
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/sync_fifo.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/sync_fifo.v
+R8
+R3
+r1
+!s85 0
+31
+Z23 !s108 1509047356.000000
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/sync_fifo.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/sync_fifo.v|
+!i113 1
+R5
+R6
+vtb_ept_epm570_top
+R22
+!i10b 1
+!s100 VAf<9[9IL3@WlhGc6zBOl0
+ISXhejQ1f7g1`BFSLVmi]N0
+R2
+R0
+w1509046288
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/Testbench/tb_ept_epm570_top.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/Testbench/tb_ept_epm570_top.v
+R14
+R3
+r1
+!s85 0
+31
+R23
+!s107 ../Testbench/tb_define.v|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/Testbench/tb_ept_epm570_top.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/Testbench/tb_ept_epm570_top.v|
+!i113 1
+R5
+R6
+vwrite_control_logic
+R20
+!i10b 1
+!s100 o3CAmW`OnN9]d;2IzXn6W1
+I<>8QLUX?il?]8aNU2NcIG1
+R2
+R0
+w1328655614
+8C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/write_control_logic.v
+FC:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/write_control_logic.v
+R15
+R3
+r1
+!s85 0
+31
+R21
+!s107 C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/write_control_logic.v|
+!s90 +define+SIM|-reportprogress|300|-work|work|C:/Jolly/Code_FPGA/EPT_5M57_AP_M4_Transfer_Test/EPT_5M57_AP_M4_Transfer_Test/test/write_control_logic.v|
+!i113 1
+R5
+R6
